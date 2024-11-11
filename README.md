@@ -1,0 +1,1 @@
+Minimalistlik Ülesannete applikatsioon
