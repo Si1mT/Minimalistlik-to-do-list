@@ -1,1 +1,1 @@
-Minimalistlik Ülesannete applikatsioon
+Minimalistlik ülesannete veebileht
