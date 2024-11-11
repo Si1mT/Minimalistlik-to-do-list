@@ -1,0 +1,1 @@
+Minimalistlik ülesannete veebileht
