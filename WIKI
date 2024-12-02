@@ -1,5 +1,5 @@
 Kirjeldus
-## "Planeeritud sündmused" on veebileht, mis võimaldab kasutajatel lisada oma sündmusi ja nende kellaaegu, samuti vahetada veebilehe teemat (tume ja hele). ##
+##"Planeeritud sündmused" on veebileht, mis võimaldab kasutajatel lisada oma sündmusi ja nende kellaaegu, samuti vahetada veebilehe teemat (tume ja hele).##
 
 ## Eesmärgid ##
 Luua lihtne ja kasutajasõbralik sündmuste haldamise tööriist.
