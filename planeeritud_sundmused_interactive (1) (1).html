@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeeritud sündmused</title>
+    <style>
+        /* Подключение Work Sans */
+        @font-face {
+            font-family: 'Work Sans';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/worksans/v19/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32KxfXBi8Jpg.woff2) format('woff2');
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color, #f9f9f9);
+            color: var(--text-color, #333);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: var(--container-bg, #ffffff);
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex: 1;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: var(--task-bg, #f1f1f1);
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time {
+            font-size: 0.9em;
+            color: var(--time-color, #777);
+        }
+
+        ul li button {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        ul li button:hover {
+            background-color: #c82333;
+        }
+
+        .theme-toggle {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .theme-toggle button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .theme-toggle button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Planeeritud sündmused</h1>
+
+        <div class="theme-toggle">
+            <button id="themeToggle">Vaheta teema</button>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Sisesta sündmus..." />
+            <input type="time" id="timeInput" />
+            <button id="addButton">Lisa</button>
+        </div>
+
+        <ul id="taskList">
+            <!-- Tasks will be dynamically added here -->
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addButton = document.getElementById("addButton");
+            const taskInput = document.getElementById("taskInput");
+            const timeInput = document.getElementById("timeInput");
+            const taskList = document.getElementById("taskList");
+            const themeToggle = document.getElementById("themeToggle");
+
+            let isDarkTheme = false;
+
+            // Add new task
+            addButton.addEventListener("click", function () {
+                const taskText = taskInput.value.trim();
+                const taskTime = timeInput.value.trim();
+                if (!taskText) {
+                    alert("Palun sisesta sündmuse nimi!");
+                    return;
+                }
+
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `
+                    <span>${taskText} <span class="time">${taskTime ? `(${taskTime})` : ''}</span></span>
+                    <button>Kustuta</button>
+                `;
+
+                const deleteButton = listItem.querySelector("button");
+                deleteButton.addEventListener("click", function () {
+                    taskList.removeChild(listItem);
+                });
+
+                taskList.appendChild(listItem);
+                taskInput.value = "";
+                timeInput.value = "";
+            });
+
+            // Toggle theme
+            themeToggle.addEventListener("click", function () {
+                isDarkTheme = !isDarkTheme;
+                if (isDarkTheme) {
+                    document.documentElement.style.setProperty('--bg-color', '#333');
+                    document.documentElement.style.setProperty('--text-color', '#f9f9f9');
+                    document.documentElement.style.setProperty('--container-bg', '#444');
+                    document.documentElement.style.setProperty('--task-bg', '#555');
+                    document.documentElement.style.setProperty('--time-color', '#ccc');
+                } else {
+                    document.documentElement.style.setProperty('--bg-color', '#f9f9f9');
+                    document.documentElement.style.setProperty('--text-color', '#333');
+                    document.documentElement.style.setProperty('--container-bg', '#ffffff');
+                    document.documentElement.style.setProperty('--task-bg', '#f1f1f1');
+                    document.documentElement.style.setProperty('--time-color', '#777');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
