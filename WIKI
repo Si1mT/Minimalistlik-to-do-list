@@ -1,19 +1,19 @@
 Kirjeldus
-"Planeeritud sündmused" on veebileht, mis võimaldab kasutajatel lisada oma sündmusi ja nende kellaaegu, samuti vahetada veebilehe teemat (tume ja hele).
+## "Planeeritud sündmused" on veebileht, mis võimaldab kasutajatel lisada oma sündmusi ja nende kellaaegu, samuti vahetada veebilehe teemat (tume ja hele). ##
 
-Eesmärgid
+## Eesmärgid ##
 Luua lihtne ja kasutajasõbralik sündmuste haldamise tööriist.
 Demonstreerida HTML-i, CSS-i ja JavaScripti kasutamist interaktiivsete funktsioonide loomiseks.
 Lisada kasutajatele mugav tumeda ja heleda teema valik.
-Funktsioonid
+## Funktsioonid ##
 Sündmuste lisamine ja kustutamine:
 Sisesta sündmuse nimi ja kellaaeg, seejärel vajuta "Lisa".
 Kustutamiseks vajuta sündmuse kõrval olevat "Kustuta" nuppu.
-Teema vahetamine:
+## Teema vahetamine: ##
 Teema saab vahetada nupuga "Vaheta teema".
 Kaasaegne disain:
 Kasutajasõbralik ja minimalistlik välimus.
-Tehnoloogiad
+## Tehnoloogiad ##
 HTML: Lehe struktuur.
 CSS: Kujundus ja teemade stiil.
 JavaScript: Sündmuste lisamise ja kustutamise loogika ning teema vahetus.
