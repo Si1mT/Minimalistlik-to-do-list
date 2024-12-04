@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="et">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Minimalistlik - Sorteerimine</title>
-
-        <link href="styles/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <h1>Ülesanded</h1>
-        <div class="buttons">
-            <button type="button">Märgi tehtuks</button>
-            <button type="button">Muuda</button>
-            <button type="button">Kustuta</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeeritud sündmused</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="js/pealeht.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <a class="tab" href="index.html">Ülesanded</a>
+            <a class="tab" href="planeeritud_sundmused_interactive (1) (1).html">Planeeritud sündmused</a>
         </div>
-    </body>
+
+        <div class="theme-toggle">
+            <button id="themeToggle">Vaheta teema</button>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Sisesta ülesanne..." />
+            <input type="text" id="descriptionInput" placeholder="Sisesta kirjeldus..." />
+            <button id="addButton">Lisa</button>
+        </div>
+
+        <ul id="taskList">
+            <!-- Tasks will be dynamically added here -->
+        </ul>
+    </div>
+</body>
 </html>
