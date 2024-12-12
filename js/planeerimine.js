@@ -3,11 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const taskInput = document.getElementById("taskInput");
     const timeInput = document.getElementById("timeInput");
     const taskList = document.getElementById("taskList");
+
     const themeToggle = document.getElementById("themeToggle");
 
     let isDarkTheme = false;
 
-    // Add new task
+    // Lisab uue sündmuse nimekirja. Võtab sündmuse nime ja aja elementidest taskInput ja timeInput
     addButton.addEventListener("click", function () {
         const taskText = taskInput.value.trim();
         const taskTime = timeInput.value.trim();
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         timeInput.value = "";
     });
 
-    // Toggle theme
+    // Vahetab lehe teemat tumeda ja heleda vahel
     themeToggle.addEventListener("click", function () {
         isDarkTheme = !isDarkTheme;
         if (isDarkTheme) {

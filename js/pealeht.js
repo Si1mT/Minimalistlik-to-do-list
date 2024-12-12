@@ -1,14 +1,15 @@
+// Pealehe funktsioonid. Enamus kood võetud Leonardi koodist failist planeerimine.js
 document.addEventListener("DOMContentLoaded", function () {
     const addButton = document.getElementById("addButton");
     const taskInput = document.getElementById("taskInput");
     const descriptionInput = document.getElementById("descriptionInput");
-
     const taskList = document.getElementById("taskList");
+
     const themeToggle = document.getElementById("themeToggle");
 
     let isDarkTheme = false;
 
-    // Add new task
+    // Lisab uue ülesande nimekirja. Võtab ülesande nime ja kirjelduse elementidest taskInput ja descriptionInput
     addButton.addEventListener("click", function () {
         const taskText = taskInput.value.trim();
         const descriptionText = descriptionInput.value.trim();
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Toggle theme
+    // Vahetab lehe teemat tumeda ja heleda vahel
     themeToggle.addEventListener("click", function () {
         isDarkTheme = !isDarkTheme;
         if (isDarkTheme) {
